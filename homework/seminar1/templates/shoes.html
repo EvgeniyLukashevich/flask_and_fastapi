@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="hobby" class="hobby__area">
+    <div class="hobby__items">
+
+        {% for shoe in shoes %}
+        <article class="hobby__item nm__item">
+            <div class="hobby__item__overlay nm__item__overlay"></div>
+            <div class="hobby__items__text">
+                <h3>{{shoe}}</h3>
+                <a href="#">КУПИТЬ</a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
