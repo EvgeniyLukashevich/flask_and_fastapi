@@ -1,5 +1,5 @@
-# Flask and FastAPI
-## Seminar 1
+## Flask and FastAPI. Seminar 1
+## 
 
 
 ### Задание 1
