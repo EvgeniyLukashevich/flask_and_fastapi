@@ -1,5 +1,5 @@
-## Flask and FastAPI. Seminar 1. Homework
-## 
+# Flask and FastAPI. Seminar 1. Homework
+---
 
 ### Задание:
 Создать базовый шаблон для интернет-магазина, 
