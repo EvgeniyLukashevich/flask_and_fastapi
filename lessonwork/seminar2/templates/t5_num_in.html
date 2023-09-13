@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+
+<body>
+    <form action="/" method="POST">
+        <input type="number" name="num1" required>
+        <br><br>
+        <input type="number" name="num2" required>
+        <br><br>
+        <label for="operation">Операция:</label>
+        <select name="operation" required aria-placeholder="Операция">
+            <option value="addition">Сложение</option>
+            <option value="subtraction">Вычитание</option>
+            <option value="multiplication">Умножение</option>
+            <option value="division">Деление</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Вычислить">
+    </form>
+</body>
+
+</html>
