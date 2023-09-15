@@ -10,12 +10,6 @@ app.config["SECRET_KEY"] = '89f55340debe60e532e776da81276edfb0592d5a3bed02409dce
 db.init_app(app)
 
 
-@app.cli.command("init-db")
-def init_db():
-    db.create_all()
-    print("Db inited")
-
-
 @app.route("/", methods=["GET", "POST"])
 def register():
     form = RegistrationForm()
@@ -39,4 +33,7 @@ def success():
 
 
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
+    print("Db connected")
     app.run(debug=True)
