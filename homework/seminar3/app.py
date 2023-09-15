@@ -1,19 +1,22 @@
 from flask import Flask, render_template, redirect, url_for, request
 from werkzeug.security import generate_password_hash
+from flask_wtf.csrf import CSRFProtect
 from models import db, User
 from forms import RegistrationForm
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///my_db.db"
-app.config["SECRET_KEY"] = '89f55340debe60e532e776da81276edfb0592d5a3bed02409dceedfdc07c4bd9'
-
+app.config[
+    "SECRET_KEY"
+] = "89f55340debe60e532e776da81276edfb0592d5a3bed02409dceedfdc07c4bd9"
+csrf = CSRFProtect(app)
 db.init_app(app)
 
 
 @app.route("/", methods=["GET", "POST"])
 def register():
     form = RegistrationForm()
-    if request.method == 'POST' and form.validate_on_submit():
+    if request.method == "POST" and form.validate_on_submit():
         hashed_password = generate_password_hash(form.password.data)
         new_user = User(
             first_name=form.first_name.data,
