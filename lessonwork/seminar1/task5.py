@@ -53,7 +53,7 @@ def students_info():
         },
     ]
 
-    return render_template('students.html', **box_head, students=students)
+    return render_template('library.html', **box_head, students=students)
 
 
 if __name__ == '__main__':
