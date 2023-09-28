@@ -32,7 +32,6 @@ async def update_item(item_id: int, updated_item: ItemIn):
     return {**dict(updated_item), 'id': item_id}
 
 
-
 @items_router.delete('/items/{item_id}', response_model=dict)
 async def hard_del_item(item_id: int):
     query = items.delete().where(items.c.id == item_id)

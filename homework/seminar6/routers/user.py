@@ -32,7 +32,6 @@ async def update_user(user_id: int, updated_user: UserIn):
     return {**dict(updated_user), 'id': user_id}
 
 
-
 @users_router.delete('/users/{user_id}', response_model=dict)
 async def hard_del_user(user_id: int):
     query = users.delete().where(users.c.id == user_id)

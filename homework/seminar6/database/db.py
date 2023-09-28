@@ -38,8 +38,6 @@ orders = sqlalchemy.Table(
     sqlalchemy.Column('order_status', sqlalchemy.Boolean, default=False)
 )
 
-
-
 engine = sqlalchemy.create_engine(
     DATABASE_URL, connect_args={"check_same_thread": False}
 )

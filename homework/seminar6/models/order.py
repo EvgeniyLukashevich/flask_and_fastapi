@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
 from datetime import datetime
 
+
 class Order(BaseModel):
     id: int = Field(...)
     user_id: int = Field(..., ge=0)
